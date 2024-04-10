@@ -1,4 +1,4 @@
-import { whyus } from '@/lib/data/whyus';
+import { whyus } from '@/lib/data/home';
 import Image from 'next/image';
 import React from 'react';
 import { ButtonContainedWhite } from '../ui/buttons';
@@ -9,7 +9,7 @@ const WhyUs = () => {
       <div className="max-w-[1100px] mx-auto text-white">
         <div className="md:pl-[4rem]">
           <p className="text-[.9rem] font-semibold">WHY VIRTUAL KITTCHEN'S?</p>
-          <h1 className="my-4 font-bold xs:text-[1.3rem] md:text-[2rem] md:leading-[1.2] max-w-[400px]">
+          <h1 className="my-4 font-bold text-[1.3rem] md:text-[2rem] md:leading-[1.2] max-w-[400px]">
             The recipe for your brand success
           </h1>
         </div>
@@ -35,7 +35,7 @@ const WhyUs = () => {
           })}
 
           <div>
-            <ButtonContainedWhite className="rounded-full max-w-fit font-semibold md:ml-[4rem]">
+            <ButtonContainedWhite className="!rounded-full max-w-fit font-semibold md:ml-[4rem]">
               SPEAK WITH A CONSULTANT
             </ButtonContainedWhite>
           </div>
