@@ -1,16 +1,12 @@
-import { ButtonHTMLAttributes } from "react";
-import { BiLoaderAlt } from "react-icons/bi";
+import { ButtonHTMLAttributes } from 'react';
+import { BiLoaderAlt } from 'react-icons/bi';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   loadingText?: string;
 }
 
-export function ButtonContained({
-  isLoading,
-  loadingText,
-  ...props
-}: ButtonProps) {
+export function ButtonContained({ isLoading, loadingText, ...props }: ButtonProps) {
   return (
     <button
       {...props}
@@ -20,7 +16,7 @@ export function ButtonContained({
       {isLoading ? (
         <>
           <BiLoaderAlt size={24} className="animate-spin" />
-          {loadingText || "Loading"}
+          {loadingText || 'Loading'}
         </>
       ) : (
         <>{props.children}</>
@@ -29,11 +25,26 @@ export function ButtonContained({
   );
 }
 
-export function ButtonOutlined({
-  isLoading,
-  loadingText,
-  ...props
-}: ButtonProps) {
+export function ButtonContainedWhite({ isLoading, loadingText, ...props }: ButtonProps) {
+  return (
+    <button
+      {...props}
+      className={`bg-white border-[1.5px] border-white text-[#222] w-full py-2 px-3 outline-none rounded-md text-[.8rem] disabled:text-[#fff] disabled:bg-[#999] disabled:border-[#999]   flex items-center gap-2 justify-center ${props.className} hover:opacity-[.96]`}
+      disabled={isLoading || props.disabled}
+    >
+      {isLoading ? (
+        <>
+          <BiLoaderAlt size={24} className="animate-spin" />
+          {loadingText || 'Loading'}
+        </>
+      ) : (
+        <>{props.children}</>
+      )}
+    </button>
+  );
+}
+
+export function ButtonOutlined({ isLoading, loadingText, ...props }: ButtonProps) {
   return (
     <button
       {...props}
@@ -43,7 +54,7 @@ export function ButtonOutlined({
       {isLoading ? (
         <>
           <BiLoaderAlt size={24} className="animate-spin" />
-          {loadingText || "Loading"}
+          {loadingText || 'Loading'}
         </>
       ) : (
         <>{props.children}</>
