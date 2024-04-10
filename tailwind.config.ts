@@ -8,8 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        main: "rgba(255, 122, 0, 1)",
+      },
       backgroundImage: {
-        main: "linear-gradient(rgba(255, 122, 0, 1), rgba(248, 42, 42, 1))",
+        "main-gradient":
+          "linear-gradient(rgba(255, 122, 0, 1), rgba(248, 42, 42, 1))",
       },
     },
   },
