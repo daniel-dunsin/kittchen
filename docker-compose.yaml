@@ -1,0 +1,20 @@
+services:
+  frontend:
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    develop:
+      watch:
+        - path: package.json
+          action: rebuild
+        - path: package-lock.json
+          action: rebuild
+        - path: ./
+          action: sync+restart
+          workdir: /client

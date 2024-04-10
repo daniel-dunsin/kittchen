@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { HTMLAttributes, useCallback, useState } from 'react';
-import { ButtonContained, ButtonOutlined } from '../ui/buttons';
+import { ButtonContained, ButtonContainedWhite, ButtonOutlined } from '../ui/buttons';
 import { CgMenu } from 'react-icons/cg';
 import { MdClose } from 'react-icons/md';
 
@@ -16,7 +16,7 @@ export default function Navbar({ ...props }: Props) {
 
   return (
     <nav {...props} className={`px-[1rem] py-[1rem] shadow-md z-[4] bg-white w-full ${props.className}`}>
-      <div className="flex items-center gap-[1rem] justify-between">
+      <div className="flex items-center gap-[1rem] justify-between max-w-[1100px] mx-auto">
         <div className="">
           <Image
             src={'/logo.png'}
@@ -28,7 +28,7 @@ export default function Navbar({ ...props }: Props) {
         </div>
 
         <div
-          className={`md:sticky md:h-fit md:w-fit fixed top-0 left-0 w-screen h-screen max-md:bg-main-gradient max-md:text-white md:p-0 p-[1rem] z-[10] ${
+          className={`md:sticky md:h-fit md:w-fit fixed top-0 left-0 w-screen h-screen max-md:bg-main-gradient max-md:text-white md:p-0 p-[1rem] z-[12] ${
             sidebarOpen ? 'max-md:translate-y-0 max-md:opacity-1' : 'max-md:translate-y-[-100%] max-md:opacity-0'
           } transition-all duration-300`}
         >
@@ -57,9 +57,7 @@ export default function Navbar({ ...props }: Props) {
               <Link href={'/about'}>LOCATIONS</Link>
             </li>
 
-            <ButtonContained className="!rounded-full md:hidden text-[.9rem] border-white" style={{ background: 'white' }}>
-              GET STARTED
-            </ButtonContained>
+            <ButtonContainedWhite className="!rounded-full md:hidden text-[.9rem]">GET STARTED</ButtonContainedWhite>
           </ul>
         </div>
 
