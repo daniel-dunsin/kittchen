@@ -34,7 +34,7 @@ export default function Navbar({ ...props }: Props) {
         >
           <header className="md:hidden mb-[2rem] flex items-center justify-between">
             <Image
-              src={'/logo.png'}
+              src={'/logo-white.png'}
               width={100}
               height={50}
               alt="Kittchen's logo"
