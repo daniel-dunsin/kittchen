@@ -3,6 +3,7 @@ import BusinessBenefits from '@/components/home/businessBenefits';
 import Comparison from '@/components/home/comparison';
 import CTA from '@/components/home/cta';
 import Facility from '@/components/home/facility';
+import FAQ from '@/components/home/faq';
 import Footer from '@/components/home/footer';
 import Navbar from '@/components/home/navbar';
 import Partnership from '@/components/home/partnership';
@@ -18,6 +19,7 @@ export default function Home() {
       <BusinessBenefits />
       <Comparison />
       <Partnership />
+      <FAQ />
       <CTA />
       <Footer />
     </main>

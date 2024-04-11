@@ -82,6 +82,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
+        <p className="text-[.8rem] mt-4">©{new Date().getFullYear()} Kittchen’s. All Rights Reserved</p>
       </div>
     </footer>
   );
