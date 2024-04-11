@@ -56,3 +56,71 @@ export const businessBenefits = [
     body: `Setting up your business is faster and involves lower initial investment compared to traditional restaurants. This reduces the financial risk for entrepreneurs, making it an attractive option for those entering the food industry.`,
   },
 ];
+
+export const comparison = [
+  {
+    title: 'Facility',
+    kittchen: {
+      title: 3.5,
+      subtitle: 'meter space',
+      body: "You only pay for the space you need and use it, it's better off than incurring costs for empty waiting areas",
+    },
+    traditional: {
+      title: 50,
+      subtitle: 'meter space',
+      body: 'Larger space costs are required to accomodate more orders, inventory, facility management, and more customers to justify every sale.',
+    },
+  },
+
+  {
+    title: 'Staff required',
+    kittchen: {
+      title: 3,
+      body: 'Your support staff is our business, we provide them by taking that burden off you, and there’s no need for in-house labor, you can start with a smaller team size.',
+    },
+    traditional: {
+      title: 15,
+      body: 'A larger operation cost is required, with unwanted spending on in-house labor, facility management, and maintenance.',
+    },
+  },
+
+  {
+    title: 'Weeks to launch',
+    kittchen: {
+      title: 4,
+      body: 'Our facilities are ready to move in designs, just pick a location, the rest is up to us. And we are here to help you navigate any permitting process.',
+    },
+    traditional: {
+      title: 10,
+      body: 'Funding, building structure, getting operation permitting, and launching your own space could take weeks or more.',
+    },
+  },
+
+  {
+    title: 'Investment',
+    kittchen: {
+      title: 4.5,
+      subtitle: 'M',
+      body: '20 million+ startup costs on your restaurant are not necessary, start today and begin to enjoy profits faster.',
+    },
+    traditional: {
+      title: 20,
+      subtitle: 'M',
+      body: 'Making a big upfront investment means taking out a larger loan and increasing your business risk. ',
+    },
+  },
+
+  {
+    title: 'Breakeven',
+    kittchen: {
+      title: 8,
+      subtitle: 'months',
+      body: 'With a virtual kitchen, breaking even in a space of 8 months is guaranteed with a 10% profit margin and 30M in yearly sales.',
+    },
+    traditional: {
+      title: 3,
+      subtitle: 'yearly',
+      body: 'It would take three years and above before you’d reach 10% profit on a 50M run rate. ',
+    },
+  },
+];
