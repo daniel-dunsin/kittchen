@@ -127,32 +127,72 @@ export const comparison = [
 
 export const faq = [
   {
-    question: 'What is a Kittchen’s space?',
+    question: 'What is a Kittchen’s?',
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "Kittchen's is a fully-equipped cooking facilities space for chefs and restaurant owners to smoothly run operations without the need for a traditional dine-in setup, focusing solely on delivery and takeout.",
   },
 
   {
     question: 'How does Kittchen’s work?',
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "You sign up to speak with our consultant, providing us with more details about your interest and the kind of space you want. Once that has been concluded, you will be asked to join an information session about kitchens and how to effectively run your business with us and the support you have access to from our community. And you can start cooking to meet customers' demand.",
   },
 
   {
-    question: 'What Kittchen’s location are there?',
+    question: 'What Kittchen’s location is there?',
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      'Starting with Lagos where we have our locations cut across strategic areas, we are expanding quickly to other states within Nigeria, and Africa.',
   },
 
   {
     question: 'How much does it cost to rent a Kittchen’s space?',
-    answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    answer: "As little as NGN 10,000 you can start using Kittchen's space and enjoy all the benefits we have to offer.",
   },
 
   {
     question: 'What is the average size of a Kittchen’s space?',
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "The average size of a Kittchen's space is 3.5 metre square, big enough for you to cook from to meet your customers demand.",
+  },
+];
+
+export const mapLocations = [
+  {
+    place: 'Lekki Phase 1',
+    coordinates: {
+      lng: 6.4478,
+      lat: 3.4723,
+    },
+  },
+  {
+    place: 'Lekki Phase 2',
+    coordinates: {
+      lng: 6.4773,
+      lat: 3.5916,
+    },
+  },
+
+  {
+    place: 'Yaba',
+    coordinates: {
+      lng: 6.5095,
+      lat: 3.3711,
+    },
+  },
+
+  {
+    place: 'Maryland',
+    coordinates: {
+      lng: 6.5764,
+      lat: 3.3653,
+    },
+  },
+
+  {
+    place: 'Ikeja',
+    coordinates: {
+      lng: 6.6018,
+      lat: 3.3515,
+    },
   },
 ];

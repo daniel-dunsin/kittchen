@@ -1,8 +1,14 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import MapComponent from '../map/index';
 import Pin from '../map/pin';
+import { mapLocations } from '@/lib/data/home';
 
 const Map = () => {
+  const [showLocations, setShowLocations] = useState<boolean>(false);
+
+  const onMapLoaded = () => setShowLocations(true);
+
   return (
     <>
       <section className="px-[1rem] py-[4rem]">
@@ -14,9 +20,41 @@ const Map = () => {
         </div>
       </section>
 
-      <MapComponent>
-        <Pin lng={6.5} lat={3.5} />
-      </MapComponent>
+      <section className="relative">
+        <MapComponent onLoad={onMapLoaded}>
+          {mapLocations?.map((location, index) => {
+            return (
+              <Pin {...location?.coordinates} key={index}>
+                <div className="w-[120px] text-center font-semibold">
+                  <p>{location?.place}</p>
+                </div>
+              </Pin>
+            );
+          })}
+        </MapComponent>
+
+        {showLocations && (
+          <div className="max-md:hidden z-[10] absolute bottom-0 right-20 w-[90vw] max-w-[500px] p-3 rounded-md bg-white shadow-md">
+            <header>
+              <h1 className="text-[.9rem] font-semibold">
+                Our commercial kitchens are located in densely populated areas with the highest volumes of delivery orders, so you
+                can reach more customers online. Now you can supercharge your restaurant growth and earning potential across the
+                country.
+              </h1>
+            </header>
+
+            <div className="mt-4">
+              {mapLocations?.map((location, index) => {
+                return (
+                  <p className="py-2 border-b-2 text-[.85rem] cursor-pointer" key={index}>
+                    {location?.place}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </section>
     </>
   );
 };

@@ -2,9 +2,12 @@
 import React, { useState, useEffect, useMemo, useCallback, ReactElement } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import Loader from '../ui/loader';
+import { MapLocation } from '@/lib/schema/interfaces/map.interface';
 
 interface Props {
   children?: ReactElement | ReactElement[];
+  center?: MapLocation;
+  onLoad?(): void;
 }
 
 const Map = (props: Props) => {
@@ -17,9 +20,10 @@ const Map = (props: Props) => {
 
   const onLoad = useCallback((map: google.maps.Map) => {
     setMap(map);
+    props?.onLoad?.();
   }, []);
 
-  const center = useMemo(() => ({ lat: 6.5, lng: 3.37 }), []);
+  const center = useMemo(() => props.center || { lat: 5.5095, lng: 30.3731 }, []);
 
   return (
     <section className="w-full">
