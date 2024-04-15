@@ -10,6 +10,9 @@ import Partnership from '@/components/home/partnership';
 import WhyUs from '@/components/home/whyUs';
 import Map from '@/components/home/map';
 import Image from 'next/image';
+import ObjQuestion from '@/components/questionnaire/objQuestion';
+import TheoryQuestion from '@/components/questionnaire/theoryQuestion';
+import Questionnaire from '@/components/home/questionnaire';
 
 export default function Home() {
   return (
@@ -24,6 +27,7 @@ export default function Home() {
       <FAQ />
       <CTA />
       <Footer />
+      <Questionnaire />
     </main>
   );
 }
