@@ -18,8 +18,8 @@ const FaqAccordion = (props: Props) => {
   }, []);
 
   return (
-    <article className="pt-2 pb-3 border-b-[1.5px]">
-      <header className="flex items-center justify-between  cursor-pointer gap-[1.5rem] flex-nowrap" onClick={toggle}>
+    <article className="pb-3 border-b-[1.5px]">
+      <header className="flex items-center justify-between  cursor-pointer gap-[1.5rem] flex-nowrap py-1" onClick={toggle}>
         <h5 className="font-semibold text-[.9rem] truncate text-[#222]">{props?.question}</h5>
 
         <span className="text-[1.5rem]">

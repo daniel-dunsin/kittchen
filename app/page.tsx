@@ -8,6 +8,7 @@ import Footer from '@/components/home/footer';
 import Navbar from '@/components/home/navbar';
 import Partnership from '@/components/home/partnership';
 import WhyUs from '@/components/home/whyUs';
+import Map from '@/components/home/map';
 import Image from 'next/image';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Facility />
       <BusinessBenefits />
       <Comparison />
+      <Map />
       <Partnership />
       <FAQ />
       <CTA />
