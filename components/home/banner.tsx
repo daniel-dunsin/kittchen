@@ -23,7 +23,7 @@ export default function Banner(props: Props) {
 
         {/* Banner Text Container */}
         <div className={styles.textContainer}>
-          <p className="text-[.9rem] font-semibold">WELCOME TO KITTCHEN'S</p>
+          <p className="text-[.9rem] font-semibold">WELCOME TO {"KITTCHEN'S"}</p>
           <h1 className="my-4 font-bold xs:text-[1.3rem] md:text-[2rem] md:leading-[1.2]">
             We make it <br /> easy for you to <br /> run your business <br /> brand seamlessly
           </h1>

@@ -12,9 +12,9 @@ const AboutCTA = () => {
           'absolute top-[55%] translate-y-[-50%] right-[-30px] z-[2] py-20 px-16 rounded-[35px] text-white bg-main-gradient w-[90vw] max-w-[500px]'
         }
       >
-        <h1 className="my-4 font-bold xs:text-[1.3rem] md:text-[2rem] md:leading-[1.2]">Let's cook up success together!</h1>
+        <h1 className="my-4 font-bold xs:text-[1.3rem] md:text-[2rem] md:leading-[1.2]">{"Let's"} cook up success together!</h1>
         <p className="text-[.75rem] xs:text-[.85rem] md:text-[.9rem]">
-          Join us at Kittchen's  and embark on a culinary journey filled with endless possibilities.
+          Join us at {"Kittchen's "} and embark on a culinary journey filled with endless possibilities.
         </p>
 
         <ButtonContainedWhite className="max-w-fit mt-4 text-[.8rem] font-bold !rounded-full">GET STARTED</ButtonContainedWhite>

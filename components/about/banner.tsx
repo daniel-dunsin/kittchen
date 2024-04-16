@@ -13,7 +13,7 @@ export default function AboutBanner() {
         <div className="max-w-[1100px] mx-auto px-[1rem] pt-[3rem]">
           <p className="text-[.9rem] font-semibold">ABOUT US</p>
           <h1 className="my-4 font-bold xs:text-[1.3rem] md:text-[2rem] md:leading-[1.2] text-main">
-            Transforming Africa's <br /> Food Industry
+            Transforming {"Africa's"} <br /> Food Industry
           </h1>
           <p className="text-[.75rem] xs:text-[.85rem] md:text-[.9rem] max-w-[400px]">
             We revolutionize the culinary industry in Africa by providing fully-equipped cooking facilities for chefs and
@@ -33,13 +33,13 @@ export default function AboutBanner() {
         {/* Banner Text Container */}
         <div className={styles.textContainer}>
           <p className="text-[.75rem] xs:text-[.85rem] md:text-[.9rem]">
-            Step into the world of culinary innovation with Kittchen's. As a leading virtual kitchen revolutionizing Africa's food
+            {`Step into the world of culinary innovation with Kittchen's. As a leading virtual kitchen revolutionizing Africa's food
             industry, Kittchen's offers fully-equipped cloud kitchens designed specifically for delivery and takeout operations.
             Chefs and restaurant owners can bid farewell to high overhead costs and limited kitchen space, thanks to Kittchen's
             flexible rental options and comprehensive support services. Joining Kittchen's means becoming part of a vibrant
             culinary community, where collaboration and creativity thrive. Experience the perfect blend of efficiency,
             convenience, and culinary expertise with Kittchen's. Let's embark on a culinary journey together and cook up success
-            in the digital age of food delivery and takeout.
+            in the digital age of food delivery and takeout.`}
           </p>
         </div>
       </div>

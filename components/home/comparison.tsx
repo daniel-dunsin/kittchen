@@ -7,14 +7,14 @@ const Comparison = () => {
       <div className="max-w-[1100px] mx-auto md:px-[4rem]">
         {/* title */}
         <h1 className=" font-bold text-[1.3rem] md:text-[2rem] md:leading-[1.2] text-main">
-          Kittchen's compared <br /> to a traditional resturant
+          {"Kittchen's"} compared <br /> to a traditional resturant
         </h1>
 
         <div className="mt-8 flex flex-col gap-[1rem]">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-[1rem]">
             <div className="max-md:hidden"></div>
             <div>
-              <h1 className=" font-bold text-[1.1rem] md:text-[1.1rem] md:leading-[1.2] text-main">Kittchen's</h1>
+              <h1 className=" font-bold text-[1.1rem] md:text-[1.1rem] md:leading-[1.2] text-main">{"Kittchen's"}</h1>
             </div>
 
             <div>
