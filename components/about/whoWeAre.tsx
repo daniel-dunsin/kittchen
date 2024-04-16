@@ -25,15 +25,15 @@ const WhoWeAre = () => {
           <div className="flex-1">
             <p className="text-[.85rem] md:text-[.9rem] font-bold uppercase">The Problem We Solve</p>
             <h1 className="font-bold text-[1.3rem] md:text-[2rem] md:leading-[1.1] text-main max-w-[400px] my-3">
-              Kittchen's Response to Industry Challenges
+              {"Kittchen's Response to Industry Challenges"}
             </h1>
           </div>
 
           <div className="flex-1">
             <p className="text-[.9rem] text-[#333]">
-              In today's fast-paced world, chefs and restaurant owners face numerous challenges, including high overhead costs,
+              {` In today's fast-paced world, chefs and restaurant owners face numerous challenges, including high overhead costs,
               limited kitchen space, and the need for efficient delivery operations. At Kittchen's, we address these issues by
-              providing cost-effective, flexible kitchen solutions tailored to the needs of modern culinary entrepreneurs.
+              providing cost-effective, flexible kitchen solutions tailored to the needs of modern culinary entrepreneurs.`}
             </p>
           </div>
         </div>
