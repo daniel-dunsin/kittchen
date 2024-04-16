@@ -3,7 +3,11 @@ import Navbar from './navbar';
 import Image from 'next/image';
 import { ButtonContainedWhite } from '../ui/buttons';
 
-export default function Banner() {
+interface Props {
+  openQuestionnaire(): void;
+}
+
+export default function Banner(props: Props) {
   return (
     <section className={styles.container}>
       <Navbar className="absolute top-0 left-0" />
@@ -28,7 +32,9 @@ export default function Banner() {
             taking your business to a new level.
           </p>
 
-          <ButtonContainedWhite className="max-w-fit mt-4 text-[.8rem] font-bold !rounded-full">GET STARTED</ButtonContainedWhite>
+          <ButtonContainedWhite className="max-w-fit mt-4 text-[.8rem] font-bold !rounded-full" onClick={props.openQuestionnaire}>
+            GET STARTED
+          </ButtonContainedWhite>
         </div>
       </div>
     </section>

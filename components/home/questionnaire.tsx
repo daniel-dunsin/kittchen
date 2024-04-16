@@ -4,7 +4,11 @@ import React, { useCallback, useMemo, useState } from 'react';
 import ObjQuestion from '../questionnaire/objQuestion';
 import TheoryQuestion from '../questionnaire/theoryQuestion';
 
-const Questionnaire = () => {
+interface Props {
+  close(): void;
+}
+
+const Questionnaire = (props: Props) => {
   const [step, setStep] = useState<number>(0);
   const [answers, setAnswers] = useState<{ [question: string]: string }>({});
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -18,17 +22,13 @@ const Questionnaire = () => {
         return prev;
       });
       if (step === questions.length - 1) {
-        setIsVisible(false);
+        props.close();
       } else {
         setStep((step) => step + 1);
       }
     },
     [step]
   );
-
-  if (!isVisible) {
-    return null;
-  }
 
   return (
     <section className="fixed top-0 left-0 z-[10] bg-black/80 w-screen h-screen flex items-center justify-center">

@@ -50,7 +50,7 @@ export default function Navbar({ ...props }: Props) {
             </li>
 
             <li>
-              <Link href={'/about'}>OUR KITCHEN</Link>
+              <Link href={'/about'}>OUR KITTCHEN'S</Link>
             </li>
 
             <li>

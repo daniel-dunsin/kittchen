@@ -1,3 +1,4 @@
+'use client';
 import Banner from '@/components/home/banner';
 import BusinessBenefits from '@/components/home/businessBenefits';
 import Comparison from '@/components/home/comparison';
@@ -13,11 +14,14 @@ import Image from 'next/image';
 import ObjQuestion from '@/components/questionnaire/objQuestion';
 import TheoryQuestion from '@/components/questionnaire/theoryQuestion';
 import Questionnaire from '@/components/home/questionnaire';
+import { useState } from 'react';
 
 export default function Home() {
+  const [questionnaireOpen, setQuestionnaireOpen] = useState<boolean>(false);
+
   return (
     <main>
-      <Banner />
+      <Banner openQuestionnaire={() => setQuestionnaireOpen(true)} />
       <WhyUs />
       <Facility />
       <BusinessBenefits />
@@ -27,7 +31,7 @@ export default function Home() {
       <FAQ />
       <CTA />
       <Footer />
-      <Questionnaire />
+      {questionnaireOpen && <Questionnaire close={() => setQuestionnaireOpen(false)} />}
     </main>
   );
 }
