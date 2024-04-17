@@ -16,7 +16,7 @@ const Questionnaire = (props: Props) => {
   const question = useMemo(() => questions[step], [step]);
 
   const onSubmit = useCallback(
-    (question: string, answer: string) => {
+    (question: string, answer: string, nextIndex?: number) => {
       setAnswers((prev) => {
         prev[question] = answer;
         return prev;
@@ -24,7 +24,7 @@ const Questionnaire = (props: Props) => {
       if (step === questions.length - 1) {
         props.close();
       } else {
-        setStep((step) => step + 1);
+        setStep((step) => nextIndex ?? step + 1);
       }
     },
     [step]
@@ -33,9 +33,16 @@ const Questionnaire = (props: Props) => {
   return (
     <section className="fixed top-0 left-0 z-[10] bg-black/80 w-screen h-screen flex items-center justify-center">
       {question?.isObj ? (
-        <ObjQuestion onSubmit={onSubmit} question={question?.question} answers={question.answers as string[]} />
+        <ObjQuestion close={props?.close} onSubmit={onSubmit} question={question?.question} answers={question.answers} />
       ) : (
-        <TheoryQuestion onSubmit={onSubmit} question={question?.question} placeholder={question?.theoryPlaceholder} />
+        <TheoryQuestion
+          close={props?.close}
+          onSubmit={onSubmit}
+          question={question?.question}
+          placeholder={question?.theoryPlaceholder}
+          selectCountry={question?.selectCountry}
+          isPhoneNumber={question.isPhoneNumber}
+        />
       )}
     </section>
   );
