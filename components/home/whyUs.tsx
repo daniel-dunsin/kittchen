@@ -1,9 +1,13 @@
+'use client';
 import { whyus } from '@/lib/data/home';
 import Image from 'next/image';
 import React from 'react';
 import { ButtonContainedWhite } from '../ui/buttons';
+import { useRouter } from 'next/navigation';
 
 const WhyUs = () => {
+  const router = useRouter();
+
   return (
     <section className="w-full px-[1rem] py-[4rem] bg-main-gradient">
       <div className="max-w-[1100px] mx-auto text-white">
@@ -35,7 +39,10 @@ const WhyUs = () => {
           })}
 
           <div>
-            <ButtonContainedWhite className="!rounded-full max-w-fit font-semibold md:ml-[4rem]">
+            <ButtonContainedWhite
+              onClick={() => router.push('/questionnaire')}
+              className="!rounded-full max-w-fit font-semibold md:ml-[4rem]"
+            >
               SPEAK WITH A CONSULTANT
             </ButtonContainedWhite>
           </div>

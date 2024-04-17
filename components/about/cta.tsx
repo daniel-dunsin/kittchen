@@ -1,8 +1,11 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
 import { ButtonContainedWhite } from '../ui/buttons';
+import { useRouter } from 'next/navigation';
 
 const AboutCTA = () => {
+  const router = useRouter();
   return (
     <section className="xl:min-h-[500px] xl:h-[500px] flex flex-col relative min-h-[400px] h-[400px] overflow-x-hidden">
       <Image src={'/cta.png'} width={1200} height={1000} alt="cta" className="w-full h-full object-cover object-center" />
@@ -17,7 +20,12 @@ const AboutCTA = () => {
           Join us at {"Kittchen's "} and embark on a culinary journey filled with endless possibilities.
         </p>
 
-        <ButtonContainedWhite className="max-w-fit mt-4 text-[.8rem] font-bold !rounded-full">GET STARTED</ButtonContainedWhite>
+        <ButtonContainedWhite
+          onClick={() => router.push('/questionnaire')}
+          className="max-w-fit mt-4 text-[.8rem] font-bold !rounded-full"
+        >
+          GET STARTED
+        </ButtonContainedWhite>
       </div>
     </section>
   );

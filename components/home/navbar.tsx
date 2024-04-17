@@ -5,11 +5,13 @@ import React, { HTMLAttributes, useCallback, useState } from 'react';
 import { ButtonContained, ButtonContainedWhite, ButtonOutlined } from '../ui/buttons';
 import { CgMenu } from 'react-icons/cg';
 import { MdClose } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Navbar({ ...props }: Props) {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+  const router = useRouter();
 
   const openSidebar = useCallback(() => setSidebarOpen(true), []);
   const closeSidebar = useCallback(() => setSidebarOpen(false), []);
@@ -52,11 +54,11 @@ export default function Navbar({ ...props }: Props) {
             </li>
 
             <li onClick={closeSidebar}>
-              <a href="#map">{"OUR KITTCHEN'S"}</a>
+              <a href="/./#map">{"OUR KITTCHEN'S"}</a>
             </li>
 
             <li onClick={closeSidebar}>
-              <a href="#map">LOCATIONS</a>
+              <a href="/./#map">LOCATIONS</a>
             </li>
 
             <ButtonContainedWhite className="!rounded-full md:hidden text-[.9rem]">GET STARTED</ButtonContainedWhite>
@@ -64,7 +66,9 @@ export default function Navbar({ ...props }: Props) {
         </div>
 
         <div className="max-w-fit flex-1 hidden md:block">
-          <ButtonContained className="!rounded-full">GET STARTED</ButtonContained>
+          <ButtonContained className="!rounded-full" onClick={() => router.push('/./#map')}>
+            GET STARTED
+          </ButtonContained>
         </div>
 
         <CgMenu size={25} className="md:hidden" onClick={openSidebar} />

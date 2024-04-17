@@ -15,6 +15,8 @@ const CTA = () => {
           Get started in a <br /> Kittchen’s space <br />
           today
         </h1>
+
+        <p className="text-[.9rem]">Go ahead and cook while we handle your operations.</p>
       </div>
     </section>
   );

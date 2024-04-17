@@ -13,15 +13,12 @@ import Map from '@/components/home/map';
 import Image from 'next/image';
 import ObjQuestion from '@/components/questionnaire/objQuestion';
 import TheoryQuestion from '@/components/questionnaire/theoryQuestion';
-import Questionnaire from '@/components/home/questionnaire';
 import { useState } from 'react';
 
 export default function Home() {
-  const [questionnaireOpen, setQuestionnaireOpen] = useState<boolean>(false);
-
   return (
     <main>
-      <Banner openQuestionnaire={() => setQuestionnaireOpen(true)} />
+      <Banner />
       <WhyUs />
       <Facility />
       <BusinessBenefits />
@@ -31,7 +28,6 @@ export default function Home() {
       <FAQ />
       <CTA />
       <Footer />
-      {questionnaireOpen && <Questionnaire close={() => setQuestionnaireOpen(false)} />}
     </main>
   );
 }

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { CgInstagram, CgTwitter } from 'react-icons/cg';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -29,7 +30,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold">Location</h3>
             <ul className="mt-2">
-              <li className="text-[.8rem]">Yaba</li>
+              <li className="text-[.8rem]">
+                <a href="/./#map">Yaba</a>
+              </li>
             </ul>
           </div>
 
@@ -66,7 +69,7 @@ const Footer = () => {
           <div className="max-w-fit flex-1">
             <div className="flex items-center gap-3 mb-2">
               <CgInstagram size={23} color="white" cursor={'pointer'} />
-              <CgTwitter size={23} color="white" cursor={'pointer'} />
+              <FaXTwitter size={23} color="white" cursor={'pointer'} />
             </div>
             <p className="text-[.85rem]">
               Contact:{' '}

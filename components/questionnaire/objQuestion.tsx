@@ -8,7 +8,6 @@ interface Props {
   question: string;
   answers: Questionnaire['answers'];
   onSubmit(question: string, answer: string, nextIndex?: number | 'submit'): void;
-  close(): void;
 }
 
 const ObjQuestion = (props: Props) => {
@@ -26,7 +25,7 @@ const ObjQuestion = (props: Props) => {
   };
 
   return (
-    <ContentBox close={props.close}>
+    <ContentBox>
       <h1 className="text-main text-[1.1rem] md:text-[1.7rem] max-w-[400px]">{props?.question}</h1>
 
       <div className="my-4 max-h-[250px] overflow-y-scroll">

@@ -1,9 +1,12 @@
+'use client';
 import React from 'react';
 import { ButtonContained, ButtonContainedWhite } from '../ui/buttons';
 import Navbar from '../home/navbar';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function AboutBanner() {
+  const router = useRouter();
   return (
     <section className={styles.container}>
       <Navbar className="top-0 left-0" />
@@ -21,7 +24,12 @@ export default function AboutBanner() {
             takeout.
           </p>
 
-          <ButtonContained className="max-w-fit mt-4 text-[.8rem] font-bold !rounded-full">GET STARTED</ButtonContained>
+          <ButtonContained
+            onClick={() => router.push('/questionnaire')}
+            className="max-w-fit mt-4 text-[.8rem] font-bold !rounded-full"
+          >
+            GET STARTED
+          </ButtonContained>
         </div>
 
         {/* CTA BANNER */}

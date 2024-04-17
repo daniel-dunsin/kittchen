@@ -1,7 +1,10 @@
+'use client';
 import React from 'react';
 import { ButtonContainedWhite } from '../ui/buttons';
+import { useRouter } from 'next/navigation';
 
 const Partnership = () => {
+  const router = useRouter();
   return (
     <section className="w-full px-[1rem] py-[4rem] bg-main-gradient">
       <div className="max-w-[1100px] mx-auto text-white md:px-[4rem]">
@@ -24,7 +27,10 @@ const Partnership = () => {
             </p>
           </div>
 
-          <ButtonContainedWhite className="!rounded-full max-w-fit md:mt-16 mt-4 text-[.85rem] font-semibold">
+          <ButtonContainedWhite
+            onClick={() => router.push('/questionnaire')}
+            className="!rounded-full max-w-fit md:mt-16 mt-4 text-[.85rem] font-semibold"
+          >
             SPEAK WITH A CONSULTANT
           </ButtonContainedWhite>
 
