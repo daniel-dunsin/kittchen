@@ -11,7 +11,7 @@ const Map = () => {
 
   return (
     <>
-      <section className="px-[1rem] py-[4rem]">
+      <section className="px-[1rem] py-[4rem]" id="map">
         <div className="max-w-[1100px] mx-auto md:px-[4rem]">
           {/* title */}
           <h1 className=" font-bold text-[1.3rem] md:text-[2rem] md:leading-[1.2] max-w-[400px] text-main">

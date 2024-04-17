@@ -19,3 +19,8 @@
   height: 10px;
   background-color: transparent;
 }
+
+*,
+html {
+  scroll-behavior: smooth;
+}
