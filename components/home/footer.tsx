@@ -16,7 +16,7 @@ const Footer = () => {
                 <Link href={'/'}>Careers</Link>
               </li>
               <li className="text-[.8rem]">
-                <Link href={'/'}>FAQ</Link>
+                <a href="/./#faq">FAQs</a>
               </li>
               <li className="text-[.8rem]">
                 <Link href={'/'}>Support</Link>

@@ -49,7 +49,7 @@ export const businessBenefits = [
   },
   {
     title: 'Data-Driven Decision Making',
-    body: `kittchen’s leverage data analytics to enable your business to gain insights into customer behavior, preferences, and markettrends. This data-driven approach empowers owners to make informed decisions regarding menu optimization marketing strategies, and overall business operations.`,
+    body: `kittchen’s leverage data analytics to enable your business to gain insights into customer behavior, preferences, and market trends. This data-driven approach empowers owners to make informed decisions regarding menu optimization marketing strategies, and overall business operations.`,
   },
   {
     title: 'Quick Launch and Reduced Risk',

@@ -17,7 +17,7 @@ const Partnership = () => {
         <div className="max-w-[1100px] justify-between text-white">
           <div className="flex items-center flex-col gap-[1rem] md:flex-row justify-between">
             <h1 className="my-4 font-bold text-[1.3rem] md:text-[2rem] md:leading-[1.2] max-w-[400px]">
-              Central point for your business operations.
+              Central point for your cooking business operations.
             </h1>
 
             <p className="text-white text-[.85rem] md:max-w-[400px]">

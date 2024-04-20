@@ -4,7 +4,7 @@ import FaqAccordion from './faqAccordion';
 
 const FAQ = () => {
   return (
-    <section className="px-[1rem] py-[4rem]">
+    <section className="px-[1rem] py-[4rem]" id="faq">
       <div className="max-w-[1100px] mx-auto md:px-[4rem]">
         {/* title */}
         <h1 className="mb-10 font-bold text-[1.3rem] md:text-[2rem] md:leading-[1.2] text-main">

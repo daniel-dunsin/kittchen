@@ -21,16 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ToastContainer
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar={false}
-        closeOnClick
-        theme="light"
-        draggable
-        pauseOnHover={false}
-      />
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          closeOnClick
+          theme="light"
+          draggable
+          pauseOnHover={false}
+        />
+        {children}
+      </body>
     </html>
   );
 }
