@@ -11,8 +11,6 @@ import Partnership from '@/components/home/partnership';
 import WhyUs from '@/components/home/whyUs';
 import Map from '@/components/home/map';
 import Image from 'next/image';
-import ObjQuestion from '@/components/questionnaire/objQuestion';
-import TheoryQuestion from '@/components/questionnaire/theoryQuestion';
 import { useState } from 'react';
 
 export default function Home() {
