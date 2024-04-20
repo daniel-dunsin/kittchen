@@ -5,6 +5,7 @@ import { ICountryData, TCountryCode, getCountryDataList } from 'countries-list';
 import * as reactCSC from 'react-country-state-city';
 
 export default function useCountry() {
+  const [filteredCountries, setFilteredCountries] = useState([]);
   const [countries, setCountries] = useState([]);
   const [states, setStates] = useState([]);
 
@@ -17,13 +18,24 @@ export default function useCountry() {
     setStates(states);
   };
 
+  const searchCountry = async (search) => {
+    search = search.trim();
+    if (search === '') {
+      setFilteredCountries(countries);
+    } else {
+      setFilteredCountries((countries) =>
+        countries.filter((country) => country.name.toLowerCase().includes(search.toLowerCase()))
+      );
+    }
+  };
+
   React.useEffect(() => {
     (async () => {
       const countries = await reactCSC.GetCountries();
-      console.log(countries);
       setCountries(countries);
+      setFilteredCountries(countries);
     })();
   }, []);
 
-  return { countries, getCountryFlag, getCountryStates, states };
+  return { countries, getCountryFlag, getCountryStates, states, searchCountry, filteredCountries };
 }

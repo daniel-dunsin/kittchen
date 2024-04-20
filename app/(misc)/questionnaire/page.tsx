@@ -14,7 +14,7 @@ const Questionnaire = () => {
   const question = useMemo(() => questions[step], [step]);
 
   const onSubmit = useCallback(
-    (question: string, answer: string, nextIndex?: number) => {
+    (question: string, answer: string, nextIndex?: number | 'submit') => {
       setAnswers((prev) => {
         prev[question] = answer;
         return prev;
@@ -22,7 +22,11 @@ const Questionnaire = () => {
       if (step === questions.length - 1) {
         router.push('/');
       } else {
-        setStep((step) => nextIndex ?? step + 1);
+        if (nextIndex === 'submit') {
+          router.push('/');
+        } else {
+          setStep((step) => nextIndex ?? step + 1);
+        }
       }
     },
     [step]
