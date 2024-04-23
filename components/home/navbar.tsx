@@ -60,6 +60,9 @@ export default function Navbar({ ...props }: Props) {
             <li onClick={closeSidebar}>
               <a href="/./#map">LOCATIONS</a>
             </li>
+<li onClick={closeSidebar}>
+              <Link href={'/./#faq'}>FAQs</Link>
+            </li>
 
             <ButtonContainedWhite className="!rounded-full md:hidden text-[.9rem]">GET STARTED</ButtonContainedWhite>
           </ul>
