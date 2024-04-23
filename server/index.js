@@ -20,7 +20,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'internal server error occured' });
 });
 
-app.all('*', () => {
+app.all('*', (req, res) => {
   res.status(404).json({ error: 'route not found' });
 });
 
