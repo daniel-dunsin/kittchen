@@ -24,7 +24,7 @@ app.all('*', (req, res) => {
   res.status(404).json({ error: 'route not found' });
 });
 
-const port = 3001;
+const port = process.env.PORT || 3000;
 
 app.listen(port, async () => {
   try {
