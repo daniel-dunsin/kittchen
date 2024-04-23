@@ -39,8 +39,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold">Resturant</h3>
             <ul className="mt-2">
-              <li className="text-[.8rem]">Brick Tea</li>
-              <li className="text-[.8rem]">Herd</li>
+              <li className="text-[.8rem]">Ijoya Food</li>
+              <li className="text-[.8rem]">Eat4less</li>
+<li className="text-[.8rem]">JollyBox</li>
             </ul>
           </div>
 
