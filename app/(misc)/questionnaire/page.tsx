@@ -5,10 +5,14 @@ import PhoneNumber from '@/components/questionnaire/phoneNumber';
 import Theory from '@/components/questionnaire/theory';
 import { questions } from '@/lib/data/questionnaire';
 import { QuestionType, SelectAnswerDTO } from '@/lib/schema/interfaces/questionnaire.interface';
+import { useSubmitResponse } from '@/services/questionnaire';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useMemo, useState } from 'react';
+import { FiLoader } from 'react-icons/fi';
+import { LuLoader2 } from 'react-icons/lu';
 import { MdClose } from 'react-icons/md';
+import { TbLoader } from 'react-icons/tb';
 import { toast } from 'react-toastify';
 
 const Page = () => {
@@ -21,6 +25,17 @@ const Page = () => {
   const question = useMemo(() => questions[questionIdx], [questionIdx]);
   const prevExists = useMemo(() => questionIdx !== 0, [questionIdx]);
 
+  const mutation = useSubmitResponse();
+
+  const submit = async () => {
+    await mutation.mutateAsync(answers);
+    // definitely won't exist
+    setIdx(questions.length);
+    setTimeout(() => {
+      router.push('/');
+    }, 500);
+  };
+
   const selectAnswer = (data: SelectAnswerDTO) => {
     setAnswers((prev) => {
       prev[data.question] = data.answer;
@@ -28,8 +43,7 @@ const Page = () => {
     });
 
     if (data.nextIdx === 'submit') {
-      toast.success('Your information has been received successfully!');
-      router.push('/');
+      submit();
     } else {
       setIdx(data.nextIdx || questionIdx + 1);
       setIndexStack([...indexStack, data.nextIdx || questionIdx + 1]);
@@ -56,42 +70,62 @@ const Page = () => {
         </header>
 
         <div className="mt-6 px-4 md:px-10 py-6">
-          <h1 className="text-main text-[1.1rem] md:text-[1.7rem] max-w-[400px] mb-5">{question?.question}</h1>
+          {mutation?.isPending ? (
+            <>
+              <div className="flex items-center flex-col gap-2">
+                <LuLoader2 className="text-main animate-spin" size={64} />
+                <h1 className="font-bold text-[2.5rem]">Submitting</h1>
+                <p>Please wait, we are submitting your response</p>
+              </div>
+            </>
+          ) : questionIdx === questions.length ? (
+            <>
+              <div className="flex items-center flex-col gap-3">
+                <h1 className="font-bold text-[2.5rem]">Thank you!</h1>
+                <p>Your response has been received successfully</p>
+                <i className="text-[.8rem] text-[#333] self-end">redirecting to home page...</i>
+              </div>
+            </>
+          ) : (
+            <>
+              <h1 className="text-main text-[1.1rem] md:text-[1.7rem] max-w-[400px] mb-5">{question?.question}</h1>
 
-          {question?.type === QuestionType.MULTIPLE_CHOICE && (
-            <MultipleChoice
-              prev={prevExists ? prev : undefined}
-              question={question?.question}
-              answers={question?.answers}
-              selectAnswer={selectAnswer}
-            />
-          )}
+              {question?.type === QuestionType.MULTIPLE_CHOICE && (
+                <MultipleChoice
+                  prev={prevExists ? prev : undefined}
+                  question={question?.question}
+                  answers={question?.answers}
+                  selectAnswer={selectAnswer}
+                />
+              )}
 
-          {question?.type === QuestionType.THEORY && (
-            <Theory
-              prev={prevExists ? prev : undefined}
-              question={question?.question}
-              selectAnswer={selectAnswer}
-              nextIndex={question?.theoryNextIndex}
-            />
-          )}
+              {question?.type === QuestionType.THEORY && (
+                <Theory
+                  prev={prevExists ? prev : undefined}
+                  question={question?.question}
+                  selectAnswer={selectAnswer}
+                  nextIndex={question?.theoryNextIndex}
+                />
+              )}
 
-          {question?.type === QuestionType.COUNTRY_SELECT && (
-            <CountrySelect
-              question={question?.question}
-              prev={prevExists ? prev : undefined}
-              selectAnswer={selectAnswer}
-              nextIndex={question?.theoryNextIndex}
-            />
-          )}
+              {question?.type === QuestionType.COUNTRY_SELECT && (
+                <CountrySelect
+                  question={question?.question}
+                  prev={prevExists ? prev : undefined}
+                  selectAnswer={selectAnswer}
+                  nextIndex={question?.theoryNextIndex}
+                />
+              )}
 
-          {question?.type === QuestionType.PHONE_NUMBER && (
-            <PhoneNumber
-              question={question?.question}
-              prev={prevExists ? prev : undefined}
-              selectAnswer={selectAnswer}
-              nextIndex={question?.theoryNextIndex}
-            />
+              {question?.type === QuestionType.PHONE_NUMBER && (
+                <PhoneNumber
+                  question={question?.question}
+                  prev={prevExists ? prev : undefined}
+                  selectAnswer={selectAnswer}
+                  nextIndex={question?.theoryNextIndex}
+                />
+              )}
+            </>
           )}
         </div>
       </div>

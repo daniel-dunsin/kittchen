@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Providers from '@/lib/providers';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,16 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <ToastContainer
-          position="top-right"
-          autoClose={2000}
-          hideProgressBar={false}
-          closeOnClick
-          theme="light"
-          draggable
-          pauseOnHover={false}
-        />
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

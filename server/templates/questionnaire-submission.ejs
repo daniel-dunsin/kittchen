@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .container {
+        padding: 1rem;
+      }
+      .title {
+        font-size: 2rem;
+      }
+      .submissions-container {
+        margin-top: 1rem;
+      }
+      .submission {
+        margin: 1rem 0;
+      }
+
+      .submission b {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">New Submission From Kittchen's Questionnaire</h1>
+      <div class="submissions-container">
+        <% submissions.forEach(function (val){ %>
+        <div class="submission">
+          <p><b>Question</b>: <%= val.question %></p>
+          <p><b>Answer</b>: <%= val.answer %></p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>
