@@ -13,7 +13,7 @@ router.post('/submit-questionnaire', async (req, res, next) => {
     const questionnaire = await Questionnaire.create({ submissions: reqBody });
 
     await sendMail({
-      to: 'adejaredaniel12@gmail.com',
+      to: 'info@kittchens.com',
       subject: 'NEW QUESTIONNAIRE SUBMISSION',
       html: renderTemplate('questionnaire-submission.ejs', { submissions: reqBody }),
     });
