@@ -48,10 +48,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold">Partners</h3>
             <ul className="mt-2">
-              <li className="text-[.8rem]">Aidi Africa </li>
-              <li className="text-[.8rem]">TAJBANK </li>
-              <li className="text-[.8rem]">Semicolon </li>
-              <li className="text-[.8rem]">Megadel Africa</li>
+              <li className="text-[.8rem]">Ijoya </li>
+              
             </ul>
           </div>
         </div>
