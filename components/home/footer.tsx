@@ -1,3 +1,4 @@
+import { mapLocations } from '@/lib/data/home';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -30,9 +31,13 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold">Location</h3>
             <ul className="mt-2">
-              <li className="text-[.8rem]">
-                <a href="/./#map">Yaba</a>
-              </li>
+              {mapLocations.map((loc, index) => {
+                return (
+                  <li className="text-[.8rem]" key={index}>
+                    <a href="/./#map">{loc.place}</a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -41,7 +46,7 @@ const Footer = () => {
             <ul className="mt-2">
               <li className="text-[.8rem]">Ijoya Food</li>
               <li className="text-[.8rem]">Eat4less</li>
-<li className="text-[.8rem]">JollyBox</li>
+              <li className="text-[.8rem]">JollyBox</li>
             </ul>
           </div>
 
@@ -49,7 +54,10 @@ const Footer = () => {
             <h3 className="font-semibold">Partners</h3>
             <ul className="mt-2">
               <li className="text-[.8rem]">Ijoya </li>
-              
+
+              <li className="text-[.8rem]">Megadel Africa</li>
+              <li className="text-[.8rem]">Aidi Venture</li>
+              <li className="text-[.8rem]">TAJBANK</li>
             </ul>
           </div>
         </div>

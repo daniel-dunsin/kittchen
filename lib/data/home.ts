@@ -157,42 +157,42 @@ export const faq = [
 ];
 
 export const mapLocations = [
-  // {
-  //   place: 'Lekki Phase 1',
-  //   coordinates: {
-  //     lng: 6.4478,
-  //     lat: 3.4723,
-  //   },
-  // },
-  // {
-  //   place: 'Lekki Phase 2',
-  //   coordinates: {
-  //     lng: 6.4773,
-  //     lat: 3.5916,
-  //   },
-  // },
+  {
+    place: 'Lekki Phase 1',
+    coordinates: {
+      lat: 6.4478,
+      lng: 3.4723,
+    },
+  },
+  {
+    place: 'Lekki Phase 2',
+    coordinates: {
+      lat: 6.4773,
+      lng: 3.5916,
+    },
+  },
 
   {
     place: 'Yaba',
     coordinates: {
-      lng: 6.5095,
-      lat: 3.3711,
+      lat: 6.5095,
+      lng: 3.3711,
     },
   },
 
-  // {
-  //   place: 'Maryland',
-  //   coordinates: {
-  //     lng: 6.5764,
-  //     lat: 3.3653,
-  //   },
-  // },
+  {
+    place: 'Maryland',
+    coordinates: {
+      lat: 6.5764,
+      lng: 3.3653,
+    },
+  },
 
-  // {
-  //   place: 'Ikeja',
-  //   coordinates: {
-  //     lng: 6.6018,
-  //     lat: 3.3515,
-  //   },
-  // },
+  {
+    place: 'Ikeja',
+    coordinates: {
+      lat: 6.6018,
+      lng: 3.3515,
+    },
+  },
 ];

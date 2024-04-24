@@ -23,7 +23,7 @@ const Map = (props: Props) => {
     props?.onLoad?.();
   }, []);
 
-  const center = useMemo(() => props.center || { lat: 5.5095, lng: 30.3731 }, []);
+  const center = useMemo(() => props.center || { lat: 6.5095, lng: 3.3731 }, []);
 
   return (
     <section className="w-full">
