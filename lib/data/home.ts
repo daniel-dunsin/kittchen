@@ -99,7 +99,7 @@ export const comparison = [
   {
     title: 'Investment',
     kittchen: {
-      title: 4.5,
+      title: 3,
       subtitle: 'M',
       body: '20 million+ startup costs on your restaurant are not necessary, start today and begin to enjoy profits faster.',
     },
