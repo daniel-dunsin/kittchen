@@ -7,8 +7,11 @@ import refactorSubmission from '@/lib/utils/refactorSubmission';
 export const useSubmitResponse = () => {
   const mutation = useMutation({
     mutationKey: ['useSubmitResponse'],
-    mutationFn: async (data: { [question: string]: string }) => {
-      const response = await http.post('/api/submit-questionnaire', refactorSubmission(data));
+    mutationFn: async (data: { submissions: { [question: string]: string }; email: string }) => {
+      const response = await http.post('/api/submit-questionnaire', {
+        submissions: refactorSubmission(data?.submissions),
+        email: data.email,
+      });
       return response?.data;
     },
 

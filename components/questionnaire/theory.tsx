@@ -8,6 +8,8 @@ interface Props {
   selectAnswer(data: SelectAnswerDTO): void;
   nextIndex?: ObjAnswer['nextIndex'];
   prev?(): void;
+  updateEmail?(email: string): void;
+  isEmail?: boolean;
 }
 
 const Theory = (props: Props) => {
@@ -23,6 +25,11 @@ const Theory = (props: Props) => {
       answer,
       nextIdx: props.nextIndex,
     });
+
+    if (props.isEmail) {
+      props.updateEmail?.(answer);
+    }
+
     reset();
   };
 
@@ -30,8 +37,9 @@ const Theory = (props: Props) => {
     <>
       <UnderlinedTextField
         InputProps={{
-          type: 'text',
+          type: props.isEmail ? 'email' : 'text',
           placeholder: 'Enter your answer here',
+          required: true,
           className: `placeholder:text-[1.1rem] text-[1.1rem] md:placeholder:text-[1.3rem] !pl-0  md:text-[1.3rem]`,
           value: answer,
           onChange(e) {

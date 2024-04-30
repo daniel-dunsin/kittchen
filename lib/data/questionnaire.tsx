@@ -86,6 +86,7 @@ export const questions: Questionnaire[] = [
     question: "What's your email address? We would like to get in touch with you",
     type: QuestionType.THEORY,
     theoryNextIndex: 10,
+    isEmail: true,
   },
 
   {
@@ -104,7 +105,7 @@ export const questions: Questionnaire[] = [
     question: 'Which Objective best describes your interests?',
     type: QuestionType.MULTIPLE_CHOICE,
     answers: [
-      { text: 'I want to work with CloudKitchens (deliveries, administrative services, cleaning, others)', nextIndex: 13 },
+      { text: "I want to work with Kittchen's (deliveries, administrative services, cleaning, others)", nextIndex: 13 },
       { text: "I'd like to propose a commercial partnership (raw materials supplier, logistics, others)", nextIndex: 16 },
       { text: "I have a property (sell/lease) and I'd like to give you more information", nextIndex: 17 },
     ],
@@ -120,6 +121,7 @@ export const questions: Questionnaire[] = [
     question: "What's your email address? We would like to get in touch with you",
     type: QuestionType.THEORY,
     theoryNextIndex: 15,
+    isEmail: true,
   },
 
   {

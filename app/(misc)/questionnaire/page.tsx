@@ -19,6 +19,7 @@ const Page = () => {
   const [questionIdx, setIdx] = useState<number>(0);
   const router = useRouter();
   const [answers, setAnswers] = useState<{ [question: string]: string }>({});
+  const [email, setEmail] = useState<string>('');
   //   to track questions answered
   const [indexStack, setIndexStack] = useState<number[]>([0]);
 
@@ -28,7 +29,7 @@ const Page = () => {
   const mutation = useSubmitResponse();
 
   const submit = async () => {
-    await mutation.mutateAsync(answers);
+    await mutation.mutateAsync({ submissions: answers, email });
     // definitely won't exist
     setIdx(questions.length);
     setTimeout(() => {
@@ -58,6 +59,8 @@ const Page = () => {
     setIndexStack(array);
     setIdx(array[array.length - 1]);
   };
+
+  const updateEmail = (email: string) => setEmail(email);
 
   return (
     <section className="z-[10] bg-main-gradient w-screen h-screen flex items-center justify-center">
@@ -105,6 +108,8 @@ const Page = () => {
                   question={question?.question}
                   selectAnswer={selectAnswer}
                   nextIndex={question?.theoryNextIndex}
+                  updateEmail={updateEmail}
+                  isEmail={question?.isEmail}
                 />
               )}
 

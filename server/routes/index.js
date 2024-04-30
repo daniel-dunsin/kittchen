@@ -8,15 +8,24 @@ const router = Router();
 
 router.post('/submit-questionnaire', async (req, res, next) => {
   try {
-    const reqBody = req.body;
+    const submissions = req.body.submissions;
+    const email = req.body.email;
 
-    const questionnaire = await Questionnaire.create({ submissions: reqBody });
+    const questionnaire = await Questionnaire.create({ submissions });
 
     await sendMail({
       to: 'info@kittchens.com',
       subject: 'NEW QUESTIONNAIRE SUBMISSION',
-      html: renderTemplate('questionnaire-submission.ejs', { submissions: reqBody }),
+      html: renderTemplate('questionnaire-submission.ejs', { submissions }),
     });
+
+    if (email) {
+      await sendMail({
+        to: email,
+        subject: "Welcome to Kittchen's",
+        html: renderTemplate('submission-received.ejs', {}),
+      });
+    }
 
     res.status(201).json(questionnaire);
   } catch (error) {

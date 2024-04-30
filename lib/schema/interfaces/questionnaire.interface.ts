@@ -4,6 +4,7 @@ export interface Questionnaire {
   // for only obj
   answers?: ObjAnswer[];
   theoryNextIndex?: number | 'submit';
+  isEmail?: boolean;
 }
 
 export enum QuestionType {

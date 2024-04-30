@@ -24,13 +24,13 @@ app.all('*', (req, res) => {
   res.status(404).json({ error: 'route not found' });
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 app.listen(port, async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URL);
     console.log('db and app connected');
   } catch (error) {
-    console.error('unable to connect to db');
+    console.error('unable to connect to db', error);
   }
 });
